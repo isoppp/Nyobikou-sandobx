@@ -1,5 +1,18 @@
 (function() {
     'use strict';
+    const input = document.getElementById('userName');
+    const btn = document.getElementById('btn');
+    const result = document.getElementById('result');
+
+    btn.onclick = (e) => {
+      e.preventDefault();
+      const userName = input.value;
+      if(userName.length === 0){
+        result.innerText = '';
+      } else {
+        result.innerText = assessment(userName);
+      }
+    };
     const answers = [
         '{userName}のいいところは声です。{userName}の特徴的な声はみなを惹きつけ、心に残ります。',
         '{userName}のいいところはまなざしです。{userName}に見つめられた人は、気になって仕方がないでしょう。',
